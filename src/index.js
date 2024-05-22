@@ -52,6 +52,15 @@ app.put('/update/:id', async (req, res) => {
         })
 })
 
+app.delete('/delete/:id', async (req, res) => {
+    await deleteProduto(req.params.id)
+        .then(() => {
+            res.status(200).send("Produto excluido !")
+        })
+        .catch(erro => {
+            console.log(erro)
+        })
+})
 
 app.listen(3000, () => {
     console.log("Server running at port 3000")
