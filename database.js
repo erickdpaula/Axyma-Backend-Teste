@@ -45,17 +45,21 @@ export const getProdutos = async () => {
 }
 
 export const getProdutoEspecifico = async (id) => {
-  
-  await get(child(db, `produtos/${id}`))
-    .then((snapshot) => {
-      if (snapshot.exists()) {
-        return snapshot.val()
-      } else {
-        return "Produto nao existe!"
+  let produto
+
+  await get((ref(db, `produtos/${id}`)))
+    .then(snapshot => {
+      if(snapshot.exists()){
+        produto = snapshot.val()
+      }else{
+        produto = "--- Produto nao existe ---"
       }
-    }).catch((error) => {
-      console.error(error)
     })
+    .catch(erro => {
+      console.log(erro)
+    })
+
+    return produto
 }
 
 export const updateProduto = (produto) => {

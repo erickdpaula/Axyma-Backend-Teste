@@ -27,11 +27,7 @@ app.get('/read', async (req, res) => {
 app.get('/read/:id', async (req, res) => {
     await getProdutoEspecifico(req.params.id)
         .then((produto) => {
-            if(!produto){
-                res.status(404).send("---- Produto nao encontrado ----")
-            }else{
-                res.status(200).send(produto)
-            }
+            res.send(produto)
         })
         .catch(erro => {
             console.log(erro)
