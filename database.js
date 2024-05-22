@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app'
-import { getDatabase, ref, set, get, push, onValue, child, update } from "firebase/database";
+import { getDatabase, ref, set, get, push, onValue, child, update, remove } from "firebase/database";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAHoVHEUpK3yvzfLWiGliYLlPK2j_8Buwg",
@@ -17,7 +17,7 @@ const db = getDatabase(app);
 const databaseRef = ref(db, 'produtos/')
 const listaProdRef = push(databaseRef)
 
-export const postProduto = (produto) => {
+export const addProduto = (produto) => {
   produto.id = listaProdRef.key
 
   set(listaProdRef, produto)
@@ -62,13 +62,9 @@ export const getProdutoEspecifico = async (id) => {
     return produto
 }
 
-export const updateProduto = (produto) => {
-  produto.id = novaListaProdutos.key
-
-  update(novaListaProdutos, produto)
+export const updateProduto = async (id, produto) => {
+  update(ref(db, `produtos/${id}`), produto)
     .catch(erro => {
-      return erro
+      console.log(erro)
     })
-
-  return produto
-}
+  }
