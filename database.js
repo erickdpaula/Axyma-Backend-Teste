@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import { getDatabase, ref, set, get, push, update, remove, child } from "firebase/database";
-import { ValidarProduto } from './validacao.js'
+import { ValidarProduto } from './validar-produto.js'
 
 const firebaseConfig = {
   apiKey: "AIzaSyAHoVHEUpK3yvzfLWiGliYLlPK2j_8Buwg",
@@ -28,8 +28,6 @@ export const addProduto = (produto) => {
   const validacao = ValidarProduto(produto)
 
   if(!validacao.isValid){
-
-    console.log(validacao)
     return validacao
 
   }else{
@@ -55,7 +53,7 @@ export const getProdutos = async () => {
 
   let listaProdutos
   
-  await get(child(ref(db, '/'), 'produtos/'))
+  await get(databaseRef)
     .then((snapshot) => {
       if (snapshot.exists()) {
         listaProdutos = snapshot.val()

@@ -10,8 +10,11 @@ app.post('/create', (req, res) => {
 
     try{
         const produto = addProduto(body)
-        res.status(produto.status).send(produto.produto)
-
+        if(produto.status == 200){
+            res.status(produto.status).send(produto.produto)
+        }else{
+            res.status(produto.status).send(produto.mensagem)
+        }
     }catch(erro){
         res.status(500).send(erro)
     }
