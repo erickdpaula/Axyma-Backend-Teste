@@ -43,7 +43,6 @@ app.get('/read/:id', async (req, res) => {
 })
 
 app.put('/update/:id', async (req, res) => {
-    let produtoRef
 
     await updateProduto(req.params.id, req.body)
         .catch(erro => {

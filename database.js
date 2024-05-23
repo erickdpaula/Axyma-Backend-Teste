@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app'
 import { getDatabase, ref, set, get, push, update, remove, child } from "firebase/database";
-import { ValidarProduto } from './validar-produto.js'
+import { ValidarProduto } from './src/helpers/validar-produto.js'
+import { Produto } from './src/models/Produto.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAHoVHEUpK3yvzfLWiGliYLlPK2j_8Buwg",
@@ -18,16 +19,19 @@ const db = getDatabase(app);
 const databaseRef = ref(db, 'produtos/')
 const listaProdRef = push(databaseRef)
 
-export const addProduto = (produto) => {
+export const addProduto = (body) => {
 
-  produto = {
+  let produto
+  
+  produto = new Produto({
     id: listaProdRef.key,
-    ...produto
-  }
+    ...body
+  })
 
   const validacao = ValidarProduto(produto)
 
   if(!validacao.isValid){
+
     return validacao
 
   }else{
