@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app'
-import { getDatabase, ref, set, get, push, onValue, child, update, remove } from "firebase/database";
+import { getDatabase, ref, set, get, push, update, remove, child } from "firebase/database";
+import { ValidarProduto } from './validacao.js'
 
 const firebaseConfig = {
   apiKey: "AIzaSyAHoVHEUpK3yvzfLWiGliYLlPK2j_8Buwg",
@@ -18,21 +19,43 @@ const databaseRef = ref(db, 'produtos/')
 const listaProdRef = push(databaseRef)
 
 export const addProduto = (produto) => {
-  produto.id = listaProdRef.key
 
-  set(listaProdRef, produto)
+  produto = {
+    id: listaProdRef.key,
+    ...produto
+  }
+
+  const validacao = ValidarProduto(produto)
+
+  if(!validacao.isValid){
+
+    console.log(validacao)
+    return validacao
+
+  }else{
+    
+    set(listaProdRef, produto)
     .catch(erro => {
-      return erro
-    })
+      validacao = {
+        status: 500,
+        mensagem: erro
+      }
+      return validacao
 
-  return produto
+    })
+    return {
+      status: 200,
+      produto
+    }
+  }
 }
+
 
 export const getProdutos = async () => {
 
   let listaProdutos
   
-  await get(databaseRef)
+  await get(child(ref(db, '/'), 'produtos/'))
     .then((snapshot) => {
       if (snapshot.exists()) {
         listaProdutos = snapshot.val()

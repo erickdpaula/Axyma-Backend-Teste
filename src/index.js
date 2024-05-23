@@ -1,16 +1,20 @@
 import express from 'express'
 import { addProduto, getProdutos, getProdutoEspecifico, updateProduto, deleteProduto } from '../database.js'
-import { Produto } from './models/Produto.js'
 
 const app = express()
 
 app.use(express.json())
 
 app.post('/create', (req, res) => {
-    const produto = new Produto(req.body)
+    const body = req.body
 
-    addProduto(produto)
-    res.send(produto)
+    try{
+        const produto = addProduto(body)
+        res.status(produto.status).send(produto.produto)
+
+    }catch(erro){
+        res.status(500).send(erro)
+    }
 
 })
 
