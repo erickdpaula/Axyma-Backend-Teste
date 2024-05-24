@@ -7,12 +7,21 @@ Proposta de aplicacao para teste técnico backend.
 - FIREBASE REALTIME DATABASE
 
 ## Como Executar
-Clone esse repositorio e execute o comando abaixo:
+Clone o projeto para o seu repositorio remoto com o comando:
 
+``` 
+  $ git clone https://github.com/erickdpaula/Axyma-Backend-Teste.git
 ```
-$ npm install
+
+E instale as dependências do projeto com:
 ```
-Para instalar as dependencias da aplicacao.
+  $ npm install
+```
+
+Para executar o projeto use:
+```
+  $ npm start
+```
 
 
 ## Rotas
