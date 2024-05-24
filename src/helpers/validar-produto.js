@@ -25,32 +25,37 @@ export const ValidarProduto = (produto) => {
         }
     }
 
-    if(produto.preco < 0){
-        return {
-            isValid: false,
-            status: 400,
-            mensagem: "Preco deve ser maior que zero"
+    if(produto.preco){
+        if(produto.preco < 0){
+            return {
+                isValid: false,
+                status: 400,
+                mensagem: "Preco deve ser maior que zero"
+            }
+        }
+        if(typeof(produto.preco) != 'number'){
+            return {
+                isValid: false,
+                status: 400,
+                mensagem: "Preco deve ser um numero"
+            }
         }
     }
-    if(typeof(produto.preco) != 'number'){
-        return {
-            isValid: false,
-            status: 400,
-            mensagem: "Preco deve ser um numero"
+
+    if(produto.quantidadeEmEstoque){
+        if(!Number.isInteger(produto.quantidadeEmEstoque)){
+            return {
+                isValid: false,
+                status: 400,
+                mensagem: "Quantidade deve ser um numero Inteiro"
+            }
         }
-    }
-    if(!Number.isInteger(produto.quantidadeEmEstoque)){
-        return {
-            isValid: false,
-            status: 400,
-            mensagem: "Quantidade deve ser um numero Inteiro"
-        }
-    }
-    if(produto.quantidadeEmEstoque < 0){
-        return {
-            isValid: false,
-            status: 400,
-            mensagem: "Quantidade nao pode ser negativa"
+        if(produto.quantidadeEmEstoque < 0){
+            return {
+                isValid: false,
+                status: 400,
+                mensagem: "Quantidade nao pode ser negativa"
+            }
         }
     }
 

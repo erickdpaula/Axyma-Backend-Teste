@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app'
-import { getDatabase, ref, set, get, push, update, remove, child } from "firebase/database";
+import { getDatabase, ref, set, get, push, update, remove } from "firebase/database";
 import { ValidarProduto } from './src/helpers/validar-produto.js'
 import { Produto } from './src/models/Produto.js';
 
@@ -17,17 +17,15 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 const databaseRef = ref(db, 'produtos/')
-const listaProdRef = push(databaseRef)
 
 export const addProduto = (body) => {
-
+  const listaProdutosRef = push(databaseRef)
   let produto
   
-  produto = new Produto({
-    id: listaProdRef.key,
+  produto = {
+    id: listaProdutosRef.key,
     ...body
-  })
-
+  }
   const validacao = ValidarProduto(produto)
 
   if(!validacao.isValid){
@@ -36,7 +34,7 @@ export const addProduto = (body) => {
 
   }else{
     
-    set(listaProdRef, produto)
+    set(listaProdutosRef, produto)
     .catch(erro => {
       validacao = {
         status: 500,
@@ -46,27 +44,26 @@ export const addProduto = (body) => {
 
     })
     return {
-      status: 200,
+      status: 201,
       produto
     }
   }
 }
 
-
 export const getProdutos = async () => {
 
-  let listaProdutos
+  let produtos
   
   await get(databaseRef)
     .then((snapshot) => {
       if (snapshot.exists()) {
-        listaProdutos = snapshot.val()
+        produtos = snapshot.val()
       }
     }).catch((error) => {
       console.error(error);
     });
 
-    return (listaProdutos) ? listaProdutos : false
+    return (produtos) ? produtos : false
 }
 
 export const getProdutoEspecifico = async (id) => {
@@ -77,7 +74,7 @@ export const getProdutoEspecifico = async (id) => {
       if(snapshot.exists()){
         produto = snapshot.val()
       }else{
-        produto = "--- Produto nao existe ---"
+        produto = "Produto nao encontrado"
       }
     })
     .catch(erro => {
@@ -88,16 +85,26 @@ export const getProdutoEspecifico = async (id) => {
 }
 
 export const updateProduto = async (id, produto) => {
-  update(ref(db, `produtos/${id}`), produto)
-    .catch(erro => {
-      console.log(erro)
-    })
+  try{
+    update(ref(db, `produtos/${id}`), produto)
+        .catch(erro => {
+          console.log(erro)
+        })
+  }catch(erro){
+    return erro
+  }
+  
+
   }
   
 export const deleteProduto = async (id) => {
-  
-  await remove(ref(db, `produtos/${id}`))
-    .catch(erro => {
-      console.log(erro)
-    })
+  try{
+    await remove(ref(db, `produtos/${id}`))
+      .catch(erro => {
+        console.log(erro)
+      })
+  }catch(erro){
+    return erro
+  }
+
 }
