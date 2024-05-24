@@ -44,6 +44,12 @@ app.get('/read/:id', async (req, res) => {
 
 app.put('/update/:id', async (req, res) => {
 
+    //Impede que o usuario modifique o ID do produto
+    const isID = new Object(req.body).hasOwnProperty('id')
+    if(isID){
+        res.status(400).send("Nao é possível modificar o ID do produto")
+    }
+
     await updateProduto(req.params.id, req.body)
         .catch(erro => {
             res.json(erro)
@@ -56,12 +62,15 @@ app.put('/update/:id', async (req, res) => {
         .catch(erro => {
             console.log(erro)
         })
+
 })
 
 app.delete('/delete/:id', async (req, res) => {
     await deleteProduto(req.params.id)
         .then(() => {
-            res.status(200).send("Produto excluido !")
+            res.status(200).json({
+                mensagem: "Produto deletado com sucesso."
+            })
         })
         .catch(erro => {
             console.log(erro)
