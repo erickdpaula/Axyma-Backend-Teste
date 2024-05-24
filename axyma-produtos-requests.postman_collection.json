@@ -1,0 +1,1200 @@
+{
+	"info": {
+		"_postman_id": "e7432b9e-e7ba-4343-9149-6d1ea24635c9",
+		"name": "axyma-produtos-requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32756147"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descricao\": \"Notebook Dell XPS16 Intel Core Ultra 7155H 16GB RAM RTX 4080\",\r\n        \"nome\": \"Dell XPS 16\",\r\n        \"preco\": 17999.9,\r\n        \"quantidadeEmEstoque\": 23\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CreateSucesso",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\": \"Notebook Dell XPS16 Intel Core Ultra 7155H 16GB RAM RTX 4050\",\r\n    \"nome\": \"Dell XPS16\",\r\n    \"preco\": 17999,\r\n    \"quantidadeEmEstoque\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "163"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a3-WKmaHKLzYCwgSLNr2MI1JVACelg\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 May 2024 05:16:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"-Nyd0CRWRl9R2wWqVzJQ\",\n    \"nome\": \"Dell XPS16\",\n    \"descricao\": \"Notebook Dell XPS16 Intel Core Ultra 7155H 16GB RAM RTX 4050\",\n    \"preco\": 17999,\n    \"quantidadeEmEstoque\": 10\n}"
+				},
+				{
+					"name": "CreateSucesso_cria_sem_quantidade",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\": \"Notebook Dell XPS16 Intel Core Ultra 7155H 16GB RAM RTX 4050\",\r\n    \"nome\": \"Dell XPS16\",\r\n    \"preco\": 21800.90\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "140"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8c-QuyuLwxG6FTHGh0cemuHSxwvBWs\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 May 2024 05:30:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"-Nyd3dyggMkqKtvqJfEC\",\n    \"descricao\": \"Notebook Dell XPS16 Intel Core Ultra 7155H 16GB RAM RTX 4050\",\n    \"nome\": \"Dell XPS16\",\n    \"preco\": 21800.9\n}"
+				},
+				{
+					"name": "CreateSucesso_sem_preco",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\": \"Notebook Apple M3 Processor 16GB RAM \",\r\n    \"nome\": \"Macbook Pro\",\r\n    \"quantidadeEmEstoque\": 30\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "127"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7f-EVBAJg+IxWJoKJB/weKSXeXsww8\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 May 2024 05:42:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"-Nyd5z4-RlNjhAKocd_Q\",\n    \"descricao\": \"Notebook Apple M3 Processor 16GB RAM \",\n    \"nome\": \"Macbook Pro\",\n    \"quantidadeEmEstoque\": 30\n}"
+				},
+				{
+					"name": "CreateErro_descricao_vazia",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\": \"\",\r\n    \"nome\": \"Dell XPS16\",\r\n    \"preco\": 17999,\r\n    \"quantidadeEmEstoque\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"create"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"21-Ow7EPivU8M9EdHfPfckwRoQWVSE\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 May 2024 05:17:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Produto deve conter uma Descricao"
+				},
+				{
+					"name": "CreateErro_sem_key_descricao",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Dell XPS16\",\r\n    \"preco\": 17999,\r\n    \"quantidadeEmEstoque\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"create"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"21-Ow7EPivU8M9EdHfPfckwRoQWVSE\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 May 2024 05:19:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Produto deve conter uma Descricao"
+				},
+				{
+					"name": "CreateErro_nome_vazio",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\": \"Notebook Samsung Ultra7155H Processor 16GB RAM \",\r\n    \"nome\": \"\",\r\n    \"preco\": 7999,\r\n    \"quantidadeEmEstoque\": 25\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"create"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1b-drgNHtT4pktwS/jtUm7wFDv8rbw\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 May 2024 06:07:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Produto deve conter um Nome"
+				},
+				{
+					"name": "CreateErro_sem_key_nome",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\": \"Notebook Samsung Ultra7155H Processor 16GB RAM \",\r\n    \"preco\": 7999,\r\n    \"quantidadeEmEstoque\": 25\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"create"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1b-drgNHtT4pktwS/jtUm7wFDv8rbw\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 May 2024 06:07:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Produto deve conter um Nome"
+				},
+				{
+					"name": "CreateErro_preco_negativo",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\": \"Notebook Samsung Ultra7155H Processor 16GB RAM \",\r\n    \"nome\": \"Galaxy book 4 Pro\",\r\n    \"preco\": -7999,\r\n    \"quantidadeEmEstoque\": 25\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"create"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d-DKa2NJvhn1gUgM8Hf/O5yup2kEU\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 May 2024 06:09:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Preco deve ser maior que zero"
+				},
+				{
+					"name": "CreateErro_quantidade_negativa",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\": \"Notebook Samsung Ultra7155H Processor 16GB RAM \",\r\n    \"nome\": \"Galaxy book 4 Pro\",\r\n    \"preco\": 7999,\r\n    \"quantidadeEmEstoque\": -25\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"create"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "32"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"20-ojNF+S7I4ByTq1uz66Z4jDAMFeo\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 May 2024 06:09:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Quantidade nao pode ser negativa"
+				}
+			]
+		},
+		{
+			"name": "Read",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/read",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"read"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ReadSucesso",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/read",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"read"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "904"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"388-oMH588Wh0il6pLeZbxNY10l3Pu4\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 May 2024 06:11:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"-NyS6MZYZcnlz8ylPJfC\": {\n        \"descricao\": \"Notebook Samsung Ultra7155H Processor 16GB RAM \",\n        \"id\": \"-NyS6MZYZcnlz8ylPJfC\",\n        \"nome\": \"Galaxy Book4 Pro\",\n        \"preco\": 7999,\n        \"quantidadeEmEstoque\": 25\n    },\n    \"-NyXvU6-uNmOqx6UPkqc\": {\n        \"descricao\": \"Notebook Apple M3 Processor 16GB RAM \",\n        \"id\": \"-NyXvU6-uNmOqx6UPkqc\",\n        \"nome\": \"Macbook Pro\",\n        \"preco\": 16999.9,\n        \"quantidadeEmEstoque\": 30\n    },\n    \"-NyaqymkGZw6lHFCRAU-\": {\n        \"descricao\": \"Notebook Acer Nitro 5 i7 32GB RAM GeForce GTX 1650 8GB\",\n        \"id\": \"-NyXAwHx4Xe0B3Giw4QP\",\n        \"nome\": \"Nitro 5\",\n        \"preco\": 5200.9,\n        \"quantidadeEmEstoque\": 100\n    },\n    \"-Nycmn7AaUNJifEdS6I1\": {\n        \"descricao\": \"Notebook Dell XPS16 Intel Core Ultra 7155H 16GB RAM RTX 4050\",\n        \"id\": \"-Nycmn7AaUNJifEdS6I1\",\n        \"nome\": \"Dell XPS16\",\n        \"preco\": 18999,\n        \"quantidadeEmEstoque\": 10\n    },\n    \"-Nycr34vwT-HDsykagEo\": {\n        \"descricao\": \"Notebook Dell XPS16 Intel Core Ultra 7155H 16GB RAM RTX 4080\",\n        \"id\": \"-Nycr34vwT-HDsykagEo\",\n        \"nome\": \"Dell XPS 16\",\n        \"preco\": 17999.9,\n        \"quantidadeEmEstoque\": 23\n    }\n}"
+				},
+				{
+					"name": "ReadSucesso_sem_produtos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/read",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"read"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-fHlmkQkF5m1FW7v4bjMnULCWlq0\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 May 2024 06:15:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Nao há produtos cadastrados"
+				}
+			]
+		},
+		{
+			"name": "Read produto especifico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/read/-NydM2RISEC9zN2OrKOq",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"read",
+						"-NydM2RISEC9zN2OrKOq"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ReadProdutoSucesso",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/read/-NydVMbSgbBMAy8i3bU1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"read",
+								"-NydVMbSgbBMAy8i3bU1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "156"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9c-1ahLH6sP+xJyC82k6vdBInC/K+E\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 May 2024 06:18:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"descricao\": \"Notebook Acer Nitro 5 i7 32GB RAM GeForce GTX 1650 8GB\",\n    \"id\": \"-NydEs_EDncwKeT2jrtD\",\n    \"nome\": \"Nitro 5\",\n    \"preco\": 5200.9,\n    \"quantidadeEmEstoque\": 100\n}"
+				},
+				{
+					"name": "ReadProdutoErro_produto_nao_existe",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/read/sdfasdfasdfasdf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"read",
+								"sdfasdfasdfasdf"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "22"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"16-SOgGAyzvxjdqB3GImQ2e3Y8sDOo\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 May 2024 06:19:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Produto nao encontrado"
+				}
+			]
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descricao\": \"Notebook Dell XPS16 Intel Core Ultra 7155H 16GB RAM RTX 4050\",\r\n    \"nome\": \"Dell XPS16\",\r\n    \"preco\": 16999,\r\n    \"quantidadeEmEstoque\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/update/-NydM2RISEC9zN2OrKOq",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"update",
+						"-NydM2RISEC9zN2OrKOq"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UpdateSucesso",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\": \"Notebook Samsung Ultra 7155H Processor 32GB RAM \",\r\n    \"nome\": \"Galaxy Book4 Pro\",\r\n    \"preco\": 9500.10,\r\n    \"quantidadeEmEstoque\": 18\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/update/-NydVeMGPjdRDv372amv",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"update",
+								"-NydVeMGPjdRDv372amv"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "155"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9b-me7ouVHqdu/1pkjGI3gnF67QRNs\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 May 2024 06:24:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"descricao\": \"Notebook Samsung Ultra7155H Processor 16GB RAM \",\n    \"id\": \"-NydEkgUjorxXww36ptX\",\n    \"nome\": \"Galaxy Book4 Pro\",\n    \"preco\": 7999,\n    \"quantidadeEmEstoque\": 25\n}"
+				},
+				{
+					"name": "UpdateErro_produto_nao_encontrado",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\": \"Notebook Samsung Ultra 7155H Processor 32GB RAM \",\r\n    \"nome\": \"Galaxy Book4 Pro\",\r\n    \"preco\": 9500.10,\r\n    \"quantidadeEmEstoque\": 18\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/update/asdasdasdasd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"update",
+								"asdasdasdasd"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "22"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"16-SOgGAyzvxjdqB3GImQ2e3Y8sDOo\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 May 2024 06:25:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Produto nao encontrado"
+				},
+				{
+					"name": "UpdateErro_nao_muda_ID",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"12345abcde\",\r\n    \"descricao\": \"Notebook Samsung Ultra 7155H Processor 16GB RAM \",\r\n    \"nome\": \"Galaxy Book4 Pro\",\r\n    \"preco\": 10980.30,\r\n    \"quantidadeEmEstoque\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/update/-NydEkgUjorxXww36ptX",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"update",
+								"-NydEkgUjorxXww36ptX"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2a-CcAJxLZWsI2eB+MQUH84S1XCHmM\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 May 2024 06:41:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Nao é possível modificar o ID do produto"
+				}
+			]
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/delete/-NydNiJ4NGVBJJYKj-eD",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"delete",
+						"-NydNiJ4NGVBJJYKj-eD"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeleteSucesso_produto_deletado",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/delete/-NydVZny0X42_HDdDeVM\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"delete",
+								"-NydVZny0X42_HDdDeVM\n"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2c-aPO0fcBHdNKqn3k2EefaUXxzvcE\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 May 2024 06:43:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mensagem\": \"Produto deletado com sucesso.\"\n}"
+				},
+				{
+					"name": "DeleteErro_produto_nao_encontrado",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/delete/asdasdasdasd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"delete",
+								"asdasdasdasd"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "22"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"16-SOgGAyzvxjdqB3GImQ2e3Y8sDOo\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 May 2024 06:44:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Produto nao encontrado"
+				}
+			]
+		}
+	]
+}
