@@ -97,12 +97,12 @@ app.delete('/delete/:id', async (req, res) => {
                         })
                     })
                     .catch(erro => {
-                        res.status(500).send(erro)
+                        res.status(500).json(erro)
                     })
             }
         })
         .catch(erro => {
-            res.status(500).send(erro)
+            res.status(500).json(erro)
         })
 
 })

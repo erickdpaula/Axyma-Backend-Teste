@@ -98,13 +98,8 @@ export const updateProduto = async (id, produto) => {
   }
   
 export const deleteProduto = async (id) => {
-  try{
     await remove(ref(db, `produtos/${id}`))
       .catch(erro => {
-        console.log(erro)
+        return erro
       })
-  }catch(erro){
-    return erro
-  }
-
 }
