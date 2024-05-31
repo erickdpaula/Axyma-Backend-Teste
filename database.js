@@ -50,21 +50,21 @@ export const getProdutos = async () => {
 }
 
 export const getProdutoEspecifico = async (id) => {
-  let produto
+  let response
 
   await get((ref(db, `produtos/${id}`)))
     .then(snapshot => {
       if(snapshot.exists()){
-        produto = snapshot.val()
+        response = Object.values(snapshot.val())
       }else{
-        produto = "Produto nao encontrado"
+        response = { mensagem: "Produto nao encontrado" }
       }
     })
     .catch(erro => {
-      console.log(erro)
+      response = { mensagem: erro }
     })
 
-    return produto
+    return response
 }
 
 export const updateProduto = async (id, produto) => {

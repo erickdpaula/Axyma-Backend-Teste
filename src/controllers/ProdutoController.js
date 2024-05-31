@@ -1,5 +1,5 @@
 import express from 'express'
-import { addProduto, getProdutos } from '../../database.js'
+import { addProduto, getProdutoEspecifico, getProdutos } from '../../database.js'
 
 export default class ProdutoController{
 
@@ -18,6 +18,16 @@ export default class ProdutoController{
         try{
             const produtos = await getProdutos()
             res.status(200).send(produtos)
+        }catch(erro){
+            res.status(500).send(erro)
+        }
+    }
+
+    async readId (req, res) {
+        const id = req.params.id
+        try{
+            const produto = await getProdutoEspecifico(id)
+            res.status(200).send(produto)
         }catch(erro){
             res.status(500).send(erro)
         }

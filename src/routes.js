@@ -7,19 +7,7 @@ routes.post('/create', new ProdutoController().create)
 
 routes.get('/read', new ProdutoController().readAll)
 
-routes.get('/read/:id', async (req, res) => {
-    await getProdutoEspecifico(req.params.id)
-        .then((produto) => {
-            if(typeof(produto) != 'object'){
-                res.status(404).send(produto)
-            }else{
-                res.status(200).send(produto)
-            }
-        })
-        .catch(erro => {
-            res.status(500).send(erro)
-        })
-})
+routes.get('/read/:id', new ProdutoController().readId)
 
 routes.put('/update/:id', async (req, res) => {
 
