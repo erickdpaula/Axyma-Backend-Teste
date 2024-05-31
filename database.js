@@ -1,7 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import { getDatabase, ref, set, get, push, update, remove } from "firebase/database";
-import { ValidarProduto } from './src/helpers/validar-produto.js'
-import { Produto } from './src/models/Produto.js';
+import { ValidarProduto } from './src/middleware/validar-produto.js'
 
 const firebaseConfig = {
   apiKey: "AIzaSyAHoVHEUpK3yvzfLWiGliYLlPK2j_8Buwg",
@@ -14,56 +13,40 @@ const firebaseConfig = {
 };
 
 // Inicializa o Firebase 
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 const databaseRef = ref(db, 'produtos/')
 
 export const addProduto = (body) => {
   const listaProdutosRef = push(databaseRef)
   let produto
-  
+
   produto = {
     id: listaProdutosRef.key,
     ...body
   }
-  const validacao = ValidarProduto(produto)
+  
+  set(listaProdutosRef, produto)
 
-  if(!validacao.isValid){
-
-    return validacao
-
-  }else{
-    
-    set(listaProdutosRef, produto)
-    .catch(erro => {
-      validacao = {
-        status: 500,
-        mensagem: erro
-      }
-      return validacao
-
-    })
-    return {
-      status: 201,
-      produto
-    }
-  }
+  return produto
 }
 
 export const getProdutos = async () => {
 
-  let produtos
+  let response
   
   await get(databaseRef)
     .then((snapshot) => {
       if (snapshot.exists()) {
-        produtos = snapshot.val()
+        response = Object.values(snapshot.val())
+      }else{
+        response = { mensagem: "Não há produtos cadastrados" }
       }
     }).catch((error) => {
-      console.error(error);
+      response = { mensagem: error }
     });
-
-    return (produtos) ? produtos : false
+    
+    return response
 }
 
 export const getProdutoEspecifico = async (id) => {
