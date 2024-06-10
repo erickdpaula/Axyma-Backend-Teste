@@ -1,9 +1,10 @@
 import { Router } from 'express'
 import ProdutoController from './controllers/ProdutoController.js'
+import { BodyValidation } from './middleware/validation/BodyValidation.js'
 
 const routes = Router()
 
-routes.post('/create', new ProdutoController().create)
+routes.post('/create', BodyValidation.post, new ProdutoController().create)
 
 routes.get('/read', new ProdutoController().readAll)
 

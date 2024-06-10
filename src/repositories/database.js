@@ -1,6 +1,5 @@
 import { initializeApp } from 'firebase/app'
 import { getDatabase, ref, set, get, push, update, remove } from "firebase/database";
-import { ValidarProduto } from './src/middleware/validar-produto.js'
 
 const firebaseConfig = {
   apiKey: "AIzaSyAHoVHEUpK3yvzfLWiGliYLlPK2j_8Buwg",

@@ -1,5 +1,5 @@
 import express from 'express'
-import { addProduto, getProdutoEspecifico, getProdutos } from '../../database.js'
+import { addProduto, getProdutoEspecifico, getProdutos } from '../repositories/database.js'
 
 export default class ProdutoController{
 
@@ -10,7 +10,7 @@ export default class ProdutoController{
             const produto = addProduto(body)
             res.status(200).send(produto)
         }catch(erro){
-            res.status(500).send(erro.stack)
+            res.status(500).send(erro)
         }
     }
 

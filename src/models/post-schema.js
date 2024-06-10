@@ -1,6 +1,6 @@
 import Joi from 'joi'
 
-const Schema = Joi.object({
+export const postSchema = Joi.object({
     nome: Joi.string()
             .required(),
     descricao: Joi.string()
@@ -12,5 +12,3 @@ const Schema = Joi.object({
                             .integer()
                             .positive()
 })
-
-export default Schema
